@@ -24,3 +24,14 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct Answer: Identifiable {
+    var id = UUID()
+    var text: String
+    var isCorrect: Bool
+}
+struct Question: Identifiable {
+    var id = UUID()
+    var correctAnswer: Answer
+    var incorrectAnswers: [Answer]
+}
